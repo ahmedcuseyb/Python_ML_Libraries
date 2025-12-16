@@ -9,9 +9,9 @@ model = joblib.load("model.pkl")
 scaler = joblib.load("scaler.pkl")
 
 # Input fields
-bedrooms = st.number_input("Bedrooms", min_value=0, step=1)
-bathrooms = st.number_input("Bathrooms", min_value=0, step=1)
-size = st.number_input("House Size (sqft)", min_value=0, step=50)
+bedrooms = st.number_input("Bedrooms", min_value=1,max_value=7, step=1)
+bathrooms = st.number_input("Bathrooms", min_value=1,max_value=4, step=1)
+size = st.number_input("House Size (sqft)", min_value=30, step=50)
 
 if st.button("Predict Price"):
     new_house = pd.DataFrame([{
